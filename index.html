@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#7a1f3d">
+<title>Anggia's Love Quest 💗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="hearts" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<header id="bar">
+  <button id="back" class="ib" aria-label="Kembali">‹</button>
+  <div id="dots" aria-label="Progress"></div>
+  <button id="musicBtn" class="ib" aria-label="Musik">🎵</button>
+</header>
+
+<div id="music" hidden>
+  <audio id="bgAudio" src="assets/audio/lagu.mp3" controls style="flex: 1; max-width: 80%;"></audio>
+  <button id="musicClose" class="mini">Tutup</button>
+</div>
+
+
+<main>
+<!-- SCENE 1 -->
+<section class="scene active" data-s="1">
+  <div id="cd" class="chip"></div>
+  <p class="script">Ada hadiah kecil buat <span class="nick"></span> 💗</p>
+  <div id="env" class="env">
+    <div class="paper"><span>💌</span></div>
+    <div class="pocket"></div>
+    <div class="flap"></div>
+    <div class="to">Untuk: <b class="rname"></b></div>
+  </div>
+  <button id="openGift" class="btn big">Buka hadiahmu, <span class="nick"></span></button>
+  <button class="btn ghost" data-music>Dengarkan lagu kita 🎵</button>
+</section>
+
+<!-- SCENE 2 -->
+<section class="scene" data-s="2">
+  <h2 class="script">Love Arcade 💕</h2>
+  <div id="g1" class="game">
+    <p class="hint">Game 1 · Catch My Love — ketuk hati sebelum kabur!</p>
+    <div class="stats"><span>Skor <b id="g1s">0</b>/<b id="g1t"></b></span><span>⏱ <b id="g1tm">20</b>s</span></div>
+    <div class="bar"><i id="g1p"></i></div>
+    <div id="g1area" class="area"><div id="g1msg" class="overlay"></div></div>
+  </div>
+  <div id="g2" class="game" hidden>
+    <p class="hint">Game 2 · Avoid The Bombs — geser jempol, tangkap 💗, hindari 💣</p>
+    <div class="stats"><span>💗 <b id="g2s">0</b>/<b id="g2t"></b></span><span id="g2l"></span><button id="g2pause" class="mini">⏸ Jeda</button></div>
+    <div class="bar"><i id="g2p"></i></div>
+    <div id="g2area" class="area"><div id="g2msg" class="overlay"></div></div>
+  </div>
+</section>
+
+<!-- SCENE 3 -->
+<section class="scene" data-s="3">
+  <h2 class="script">Our Little Gallery 📸</h2>
+  <p class="hint">Ketuk foto untuk memperbesar</p>
+  <div id="gallery"></div>
+  <button class="btn next">Lanjut 💗</button>
+</section>
+
+<!-- SCENE 4 -->
+<section class="scene" data-s="4">
+  <div id="quizPart">
+    <h2 class="script">Love Quiz 💕</h2>
+    <div class="stats"><span id="qn"></span></div>
+    <div id="quiz" class="card"></div>
+  </div>
+  <div id="letterPart" hidden>
+    <h2 class="script">Love Letter 💌</h2>
+    <p class="hint" id="letterHint">Ketuk amplopnya</p>
+    <div id="lenv" class="env small" role="button" tabindex="0" aria-label="Buka surat">
+      <div class="paper"><span>💌</span></div><div class="pocket"></div><div class="flap"></div>
+    </div>
+    <div id="letter" class="card letter" hidden></div>
+    <button id="toGifts" class="btn next" hidden>Lanjut 🎁</button>
+  </div>
+</section>
+
+<!-- SCENE 5 -->
+<section class="scene" data-s="5">
+  <h2 class="script">Choose Your Gift 🎁</h2>
+  <p class="hint">Pilih satu kotak. Boleh buka semuanya!</p>
+  <div id="gifts"></div>
+</section>
+
+<!-- SCENE 6 -->
+<section class="scene" data-s="6">
+  <div class="final">
+    <div class="spark" aria-hidden="true">✨🎂✨</div>
+    <h1 class="script big">HAPPY BIRTHDAY,<br><span class="nick"></span>! 💗</h1>
+    <p class="rname name"></p>
+    <div id="finalMsg" class="card" hidden></div>
+    <button id="openLast" class="btn big">Buka pesan terakhir 💌</button>
+    <button class="btn ghost" data-music>Dengarkan lagu kita 🎵</button>
+    <button id="again" class="btn ghost">Main lagi dari awal</button>
+  </div>
+</section>
+</main>
+
+<div id="modal" hidden><div class="modalbox"><div id="modalBody"></div><button id="modalClose" class="btn">Yey, makasih 💗</button></div></div>
+<div id="lightbox" hidden><figure><img alt=""><figcaption></figcaption></figure></div>
+
+<script src="script.js"></script>
+</body>
+</html>
